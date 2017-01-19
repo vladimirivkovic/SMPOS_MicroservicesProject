@@ -24,6 +24,7 @@ public class Aktivnost implements Serializable {
 	
 	@Id
 	private String id;
+	private int brojMere;
 	private String nosilacAktivnosti;
 	private String opis;
 	private String cilj;
@@ -185,22 +186,42 @@ public class Aktivnost implements Serializable {
 		this.verifikacijuIzvrsio = verifikacijuIzvrsio;
 	}
 
+	public int getBrojMere() {
+		return brojMere;
+	}
+
+	public void setBrojMere(int brojMere) {
+		this.brojMere = brojMere;
+	}
+
 	@Override
 	public String toString() {
-		return "Aktivnost [id=" + id + ", nosilacAktivnosti=" + nosilacAktivnosti + ", opis=" + opis + ", cilj=" + cilj
-				+ ", ocekivaniEfekti=" + ocekivaniEfekti + ", napomena=" + napomena + ", rukovodilacTima="
-				+ rukovodilacTima + ", datumPotpisa=" + datumPotpisa + ", ocenaEfekta=" + ocenaEfekta
-				+ ", procenatOstvarenosti=" + procenatOstvarenosti + ", datumVerifikacije=" + datumVerifikacije
-				+ ", obimRealizacije=" + obimRealizacije + ", verifikacijaEfekta=" + verifikacijaEfekta
-				+ ", procenatRealizacije=" + procenatRealizacije + ", datumPodnosenjaIzvestaja="
+		return "Aktivnost [id=" + id + ", brojMere=" + brojMere + ", nosilacAktivnosti=" + nosilacAktivnosti + ", opis="
+				+ opis + ", cilj=" + cilj + ", ocekivaniEfekti=" + ocekivaniEfekti + ", napomena=" + napomena
+				+ ", rukovodilacTima=" + rukovodilacTima + ", datumPotpisa=" + datumPotpisa + ", ocenaEfekta="
+				+ ocenaEfekta + ", procenatOstvarenosti=" + procenatOstvarenosti + ", datumVerifikacije="
+				+ datumVerifikacije + ", obimRealizacije=" + obimRealizacije + ", verifikacijaEfekta="
+				+ verifikacijaEfekta + ", procenatRealizacije=" + procenatRealizacije + ", datumPodnosenjaIzvestaja="
 				+ datumPodnosenjaIzvestaja + ", izvestajPodneo=" + izvestajPodneo + ", verifikacijuIzvrsio="
-				+ verifikacijuIzvrsio + "]";
+				+ verifikacijuIzvrsio + ", getId()=" + getId() + ", getNosilacAktivnosti()=" + getNosilacAktivnosti()
+				+ ", getOpis()=" + getOpis() + ", getCilj()=" + getCilj() + ", getOcekivaniEfekti()="
+				+ getOcekivaniEfekti() + ", getNapomena()=" + getNapomena() + ", getRukovodilacTima()="
+				+ getRukovodilacTima() + ", getDatumPotpisa()=" + getDatumPotpisa() + ", getOcenaEfekta()="
+				+ getOcenaEfekta() + ", getProcenatOstvarenosti()=" + getProcenatOstvarenosti()
+				+ ", getDatumVerifikacije()=" + getDatumVerifikacije() + ", getObimRealizacije()="
+				+ getObimRealizacije() + ", getVerifikacijaEfekta()=" + getVerifikacijaEfekta()
+				+ ", getProcenatRealizacije()=" + getProcenatRealizacije() + ", getDatumPodnosenjaIzvestaja()="
+				+ getDatumPodnosenjaIzvestaja() + ", getIzvestajPodneo()=" + getIzvestajPodneo()
+				+ ", getVerifikacijuIzvrsio()=" + getVerifikacijuIzvrsio() + ", getBrojMere()=" + getBrojMere()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + brojMere;
 		result = prime * result + ((cilj == null) ? 0 : cilj.hashCode());
 		result = prime * result + ((datumPodnosenjaIzvestaja == null) ? 0 : datumPodnosenjaIzvestaja.hashCode());
 		result = prime * result + ((datumPotpisa == null) ? 0 : datumPotpisa.hashCode());
@@ -230,6 +251,8 @@ public class Aktivnost implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Aktivnost other = (Aktivnost) obj;
+		if (brojMere != other.brojMere)
+			return false;
 		if (cilj == null) {
 			if (other.cilj != null)
 				return false;
@@ -302,6 +325,7 @@ public class Aktivnost implements Serializable {
 			return false;
 		return true;
 	}
+
 	
 	
 	
