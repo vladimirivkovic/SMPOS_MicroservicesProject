@@ -18,7 +18,7 @@ public class Aktivnost implements Serializable {
 	
 	public enum ObimRealizacije {
 		REALIZOVANA,
-		DELIMOCNI,
+		DELIMICNO,
 		NEREALIZOVANA
 	}
 	
@@ -38,7 +38,7 @@ public class Aktivnost implements Serializable {
 	private ObimRealizacije obimRealizacije;
 	private OcenaEfekta verifikacijaEfekta;
 	private int procenatRealizacije;
-	private Date datumPodnosenjaIzvestaja;
+	private Date datumRealizacije;
 	private String izvestajPodneo;
 	private String verifikacijuIzvrsio;
 	
@@ -162,12 +162,12 @@ public class Aktivnost implements Serializable {
 		this.procenatRealizacije = procenatRealizacije;
 	}
 
-	public Date getDatumPodnosenjaIzvestaja() {
-		return datumPodnosenjaIzvestaja;
+	public Date getDatumRealizacije() {
+		return datumRealizacije;
 	}
 
-	public void setDatumPodnosenjaIzvestaja(Date datumPodnosenjaIzvestaja) {
-		this.datumPodnosenjaIzvestaja = datumPodnosenjaIzvestaja;
+	public void setDatumRealizacije(Date datumPodnosenjaIzvestaja) {
+		this.datumRealizacije = datumPodnosenjaIzvestaja;
 	}
 
 	public String getIzvestajPodneo() {
@@ -202,7 +202,7 @@ public class Aktivnost implements Serializable {
 				+ ocenaEfekta + ", procenatOstvarenosti=" + procenatOstvarenosti + ", datumVerifikacije="
 				+ datumVerifikacije + ", obimRealizacije=" + obimRealizacije + ", verifikacijaEfekta="
 				+ verifikacijaEfekta + ", procenatRealizacije=" + procenatRealizacije + ", datumPodnosenjaIzvestaja="
-				+ datumPodnosenjaIzvestaja + ", izvestajPodneo=" + izvestajPodneo + ", verifikacijuIzvrsio="
+				+ datumRealizacije + ", izvestajPodneo=" + izvestajPodneo + ", verifikacijuIzvrsio="
 				+ verifikacijuIzvrsio + ", getId()=" + getId() + ", getNosilacAktivnosti()=" + getNosilacAktivnosti()
 				+ ", getOpis()=" + getOpis() + ", getCilj()=" + getCilj() + ", getOcekivaniEfekti()="
 				+ getOcekivaniEfekti() + ", getNapomena()=" + getNapomena() + ", getRukovodilacTima()="
@@ -211,7 +211,7 @@ public class Aktivnost implements Serializable {
 				+ ", getDatumVerifikacije()=" + getDatumVerifikacije() + ", getObimRealizacije()="
 				+ getObimRealizacije() + ", getVerifikacijaEfekta()=" + getVerifikacijaEfekta()
 				+ ", getProcenatRealizacije()=" + getProcenatRealizacije() + ", getDatumPodnosenjaIzvestaja()="
-				+ getDatumPodnosenjaIzvestaja() + ", getIzvestajPodneo()=" + getIzvestajPodneo()
+				+ getDatumRealizacije() + ", getIzvestajPodneo()=" + getIzvestajPodneo()
 				+ ", getVerifikacijuIzvrsio()=" + getVerifikacijuIzvrsio() + ", getBrojMere()=" + getBrojMere()
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
 				+ "]";
@@ -223,7 +223,7 @@ public class Aktivnost implements Serializable {
 		int result = 1;
 		result = prime * result + brojMere;
 		result = prime * result + ((cilj == null) ? 0 : cilj.hashCode());
-		result = prime * result + ((datumPodnosenjaIzvestaja == null) ? 0 : datumPodnosenjaIzvestaja.hashCode());
+		result = prime * result + ((datumRealizacije == null) ? 0 : datumRealizacije.hashCode());
 		result = prime * result + ((datumPotpisa == null) ? 0 : datumPotpisa.hashCode());
 		result = prime * result + ((datumVerifikacije == null) ? 0 : datumVerifikacije.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
@@ -258,10 +258,10 @@ public class Aktivnost implements Serializable {
 				return false;
 		} else if (!cilj.equals(other.cilj))
 			return false;
-		if (datumPodnosenjaIzvestaja == null) {
-			if (other.datumPodnosenjaIzvestaja != null)
+		if (datumRealizacije == null) {
+			if (other.datumRealizacije != null)
 				return false;
-		} else if (!datumPodnosenjaIzvestaja.equals(other.datumPodnosenjaIzvestaja))
+		} else if (!datumRealizacije.equals(other.datumRealizacije))
 			return false;
 		if (datumPotpisa == null) {
 			if (other.datumPotpisa != null)

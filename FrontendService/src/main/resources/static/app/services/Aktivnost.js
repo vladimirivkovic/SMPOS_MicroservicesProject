@@ -26,10 +26,17 @@
                         data: data
                     });
                 },
+                put: function (data) {
+                    return $http({
+                        method: 'PUT',
+                        url: regUrl + data.id,
+                        data: data
+                    });
+                },
                 delete: function (data) {
                     return $http({
                         method: 'DELETE',
-                        url: regUrl,
+                        url: regUrl + data.id,
                         data: data
                     });
                 }

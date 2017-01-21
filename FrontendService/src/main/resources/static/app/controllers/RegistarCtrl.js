@@ -125,20 +125,6 @@
 	                );
 				  }
 				  
-				  function processResponse(response) {
-	                    if (response.data) {
-	                        if (response.data.length) {
-	                            $scope.data = response.data;
-	                        } else {
-	                            $scope.data = [];
-	                            $scope.data.push(response.data);
-	                        }
-	                    } else {
-	                        $scope.data = [];
-	                    }
-
-	                    console.log(response);
-	                }
 				  
 				  $scope.printDate = function(unix_timestamp) {
 					  var date = '';

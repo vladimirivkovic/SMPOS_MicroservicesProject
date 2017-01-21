@@ -1,0 +1,85 @@
+
+<div>
+	<div class="modal-header">
+		<h3 class="modal-title" id="modal-title">Verifikacija aktivnosti:</h3>
+	</div>
+	<div class="modal-body" id="modal-body">
+		<table class="table">
+			<tr>
+				<td>Obim realizacije</td>
+				<td><form class="form-group" ng-disabled="readonly">
+						<div class="radio">
+							<label for="p"> <input id="p" type="radio" ng-disabled="readonly"
+								ng-model="a.obimRealizacije" value="REALIZOVANA">
+								Aktivnost realizovana
+							</label><br />
+						</div>
+						<div class="radio">
+							<label for="k"> <input id="k" type="radio" ng-disabled="readonly"
+								ng-model="a.obimRealizacije" value="DELIMICNO">
+								Akrivnost delimicno realizovana
+							</label><br />
+						</div>
+						<div class="radio">
+							<label for="r"> <input id="r" type="radio" ng-disabled="readonly"
+								ng-model="a.obimRealizacije" value="NEREALIZOVANA">
+								Aktivnost nije realizovana
+							</label><br />
+						</div>
+
+					</form></td>
+			</tr>
+			<tr>
+				<td>Stepen ostvarenja ciljeva</td>
+				<td><form class="form-group" >
+						<div class="radio">
+							<label for="p1"> <input id="p1" type="radio" ng-disabled="readonly"
+								ng-model="a.verifikacijaEfekta" value="UPOTPUNOSTI">
+								Ciljevi ostvareni u potpunosti
+							</label><br />
+						</div>
+						<div class="radio">
+							<label for="k1"> <input id="k1" type="radio" ng-disabled="readonly"
+								ng-model="a.verifikacijaEfekta" value="NEOSTVARENI">
+								Ciljevi nisu ostvareni
+							</label><br />
+						</div>
+						<div class="radio">
+							<label for="r1"> <input id="r1" type="radio" ng-disabled="readonly"
+								ng-model="a.verifikacijaEfekta" value="DELIMICNI">
+								Ciljevi delimicno ostvareni
+							</label><br />
+						</div>
+
+					</form></td>
+			</tr>
+			<tr ng-show=" a.verifikacijaEfekta === 'DELIMICNI'">
+				<td>Procenat realizacije (%)</td>
+				<td><input type="number" class="form-control"
+					ng-disabled="readonly" ng-model="a.procenatRealizacije">
+			</tr>
+
+			<tr>
+				<td>Datum verifikacije</td>
+				<td><p class="input-group">
+						<input type="text" class="form-control" ng-disabled="readonly"
+							uib-datepicker-popup="{{format}}" ng-model="a.datumVerifikacije"
+							is-open="popup1.opened" datepicker-options="dateOptions"
+							ng-required="true" close-text="Close"
+							alt-input-formats="altInputFormats" /> <span
+							class="input-group-btn">
+							<button type="button" class="btn btn-default" ng-click="open1()">
+								<i class="glyphicon glyphicon-calendar"></i>
+							</button>
+						</span>
+					</p></td>
+			</tr>
+		</table>
+
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="button" ng-click="save()"
+			ng-show="!readonly">OK</button>
+		<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+	</div>
+</div>

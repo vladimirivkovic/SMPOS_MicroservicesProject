@@ -6,5 +6,8 @@ angular.module('app.controllers', [
 	'app.RegistarCtrl',
 	'app.RegistarModalCtrl',
 	'app.EditDateModalCtrl',
-	'app.AktivnostiCtrl'
+	'app.AktivnostiCtrl',
+	'app.AktivnostModalCtrl',
+	'app.ResultsModalCtrl',
+	'app.VerifyModalCtrl'
 ]);
