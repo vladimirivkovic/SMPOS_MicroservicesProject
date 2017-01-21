@@ -2,40 +2,48 @@
 <nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-subject">
-            <img src="/img/logo40.png" class="mt-5 mr-10 pull-left" height="40" width="40"/>
-            <a class="navbar-brand" href="/">City of Novi Sad - Parliament</a>
+            <img src="/img/ftn-logo.png" class="mt-5 mr-10 pull-left" height="40" width="40"/>
+            <a class="navbar-brand" href="/">Fakultet tehničkih nauka - Novi Sad</a>
         </div>
 
         <ul class="nav navbar-nav navbar-left">
-
-            <!--Sessions-->
-            <li uib-dropdown on-toggle="toggled(open)" ng-if="">
-                <a href id="simple-dropdown" uib-dropdown-toggle>Sessions</a>
-                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-                    <li ng-if="display == 'representative' || display == 'president'">
-                        <a href="/sessions">Sessions</a>
-                    </li>
-                    <li ng-if="display == 'president'">
-                        <a href="/manageSession">Manage Session</a>
-                    </li>
-                </ul>
+        
+        	<li>
+                <a href="#/registarMera">Registar Mera</a>
+            </li>
+            
+            <li>
+                <a href="#/naloziAktivnosti">Nalozi za aktivnosti</a>
             </li>
 
-            <!--Acts menu -->
-            <li uib-dropdown on-toggle="toggled(open)" ng-if="">
-                <a href id="simple-dropdown" uib-dropdown-toggle>Acts</a>
-                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-                    <li ng-if="display == 'citizen' || display == 'representative' || display == 'president'">
-                        <a href="/acts">Search Acts</a>
-                    </li>
-                    <li ng-if="display == 'representative' || display == 'president'">
-                        <a href="/myActs">My Acts</a>
-                    </li>
-                    <li ng-if="(display == 'representative' || display == 'president') && currentStatus == 'act'" >
-                        <a href="/newAct" ng-class="{'non-active' : (currentStatus != 'act')}">Propose an act</a>
-                    </li>
-                </ul>
-            </li>
+<!--             Sessions -->
+<!--             <li uib-dropdown on-toggle="toggled(open)" ng-if="true"> -->
+<!--                 <a href id="simple-dropdown" uib-dropdown-toggle>Regi</a> -->
+<!--                 <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown"> -->
+<!--                     <li ng-if="display == 'representative' || display == 'president'"> -->
+<!--                         <a href="/sessions">Sessions</a> -->
+<!--                     </li> -->
+<!--                     <li ng-if="display == 'president'"> -->
+<!--                         <a href="/manageSession">Manage Session</a> -->
+<!--                     </li> -->
+<!--                 </ul> -->
+<!--             </li> -->
+
+<!--             Acts menu -->
+<!--             <li uib-dropdown on-toggle="toggled(open)" ng-if=""> -->
+<!--                 <a href id="simple-dropdown" uib-dropdown-toggle>Acts</a> -->
+<!--                 <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown"> -->
+<!--                     <li ng-if="display == 'citizen' || display == 'representative' || display == 'president'"> -->
+<!--                         <a href="/acts">Search Acts</a> -->
+<!--                     </li> -->
+<!--                     <li ng-if="display == 'representative' || display == 'president'"> -->
+<!--                         <a href="/myActs">My Acts</a> -->
+<!--                     </li> -->
+<!--                     <li ng-if="(display == 'representative' || display == 'president') && currentStatus == 'act'" > -->
+<!--                         <a href="/newAct" ng-class="{'non-active' : (currentStatus != 'act')}">Propose an act</a> -->
+<!--                     </li> -->
+<!--                 </ul> -->
+<!--             </li> -->
 
             <!--Users menu-->
             <li ng-if="">

@@ -1,0 +1,30 @@
+<div class="pl-50 pr-50 pb-50 pt-5">
+    <div class="mt-50">
+        <h1>Pregled preventivnih/korektivnih aktivnosti</h1>
+        <h4>Pregled svih preventivnih/korektivnih aktivnosti </h4>
+        <button class="btn btn-info" ng-click="createNew()">Dodaj aktivnost</button>
+        <table class="table table-bordered table-striped table-hover" ng-if="data.length">
+            <tr>
+                <th class="text-center">Redni broj</th>
+                <th class="text-center">Proces/proizvod/usluga</th>
+                <th class="text-center">Neusaglasenost</th>
+                <th class="text-center">Mera (P/K)</th>
+                <th class="text-center">Rukovodilac tima</th>
+                <th class="text-center">Planiran</th>
+                <th class="text-center">Produzen</th>
+                <th class="text-center">Ostvaren</th>
+            </tr>
+<!--             <tr ng-repeat="act in data"> -->
+<!--                 <td>{{ act.title }}</td> -->
+<!--                 <td>{{ formatStatus(act.status) }}</td> -->
+<!--                 <td><button class="btn btn-warning" ng-click="openPdf(act.uri)">PDF</button></td> -->
+<!--                 <td><button class="btn btn-info" ng-click="showHtml(act.uri)">HTML</button></td> -->
+<!--                 <td><button class="btn btn-danger" ng-click="delete(act.uri)" ng-disabled="currentStatus != 'act'">Delete</button></td> -->
+<!--             </tr> -->
+        </table>
+        <div ng-if="!data.length">
+            <div class="alert alert-warning" role="alert"><b>Registar je prazan!</b></div>
+        </div>
+    </div>
+
+</div>

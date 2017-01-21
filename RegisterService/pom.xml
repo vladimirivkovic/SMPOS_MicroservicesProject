@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>rs.uns.acs</groupId>
-	<artifactId>register-pc</artifactId>
+	<artifactId>registry-pc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 

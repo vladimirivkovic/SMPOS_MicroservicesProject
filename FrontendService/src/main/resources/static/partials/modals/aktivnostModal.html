@@ -1,0 +1,52 @@
+    <div>
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">Nalog za P/K aktivnost:</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+        	<table class="table">
+        		<tr>
+        			<td>Proces/proizvod/usluga</td>
+        			<td><input type="text" class="form-control" ng-model="ppu">
+        		</tr>
+        		<tr>
+        			<td>Neusaglasenost</td>
+        			<td><input type="text" class="form-control" ng-model="neusaglasnost">
+        		</tr>
+        		<tr>
+        			<td>Mera (P/K)</td>
+        			<td><form class="form-group">
+        			<div class="radio">
+        				<label for="p">
+						   <input id="p" type="radio" ng-model="mera" value="P">
+						   Preventivna
+						 </label><br/>
+						 </div>
+						 <div class="radio">
+						 <label for="k">
+						   <input id="k" type="radio" ng-model="mera" value="K">
+						   Korektivna
+						 </label><br/>
+						 </div>
+        			</form></td>
+        		</tr>
+        		<tr>
+        			<td>Rukovodilac tima</td>
+        			<td><input type="text" class="form-control" ng-model="rukovodilacTima">
+        		</tr>
+        		<tr>
+        			<td>Planirani rok</td>
+        			<td><p class="input-group">
+			         <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="planiranRok" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+			         <span class="input-group-btn">
+			           <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+			         </span>
+			       </p></td>
+        		</tr>
+        	</table>
+            
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="save()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>

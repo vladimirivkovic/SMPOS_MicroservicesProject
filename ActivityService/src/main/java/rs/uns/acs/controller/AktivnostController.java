@@ -11,6 +11,7 @@ import rs.uns.acs.model.Aktivnost;
 import rs.uns.acs.service.AktivnostService;
 
 @RestController
+@RequestMapping("api")
 public class AktivnostController extends AbstractRESTController<Aktivnost, String> {
 
 	private AktivnostService aktivnostService;
