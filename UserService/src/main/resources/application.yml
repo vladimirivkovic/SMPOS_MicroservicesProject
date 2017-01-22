@@ -1,0 +1,17 @@
+server:
+  port: 8085
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    
+mongodb:
+  host: localhost
+  port: 27017
+  databasename: user
+  
+general:
+  pageSize: 15

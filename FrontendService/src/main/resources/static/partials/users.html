@@ -1,0 +1,28 @@
+<div class="pl-50 pr-50 pb-50 pt-5">
+    <div class="mt-50">
+        <h1>Pregled registrovanih korisnika</h1>
+        <h4>Pregled svih radnika kojima je odobren pristup aplikaciji</h4>
+        <button class="btn btn-info" ng-click="createNew(null)">Dodaj korisnika</button>
+        <table class="table table-bordered table-striped table-hover" ng-if="data.length">
+            <tr>
+                <th class="text-center">Ime</th>
+                <th class="text-center">Prezime</th>
+                <th class="text-center">Korisnicko ime</th>
+                <th class="text-center">Uloga</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="u in data">
+                <td class="text-center">{{ u.ime }}</td>
+                <td class="text-center">{{ u.prezime }}</td>
+                <td class="text-center">{{ u.username }}</td>
+                <td class="text-center">{{ u.uloga }}</td>
+
+                
+                <td><button class="btn btn-info" ng-click="createNew(u)">Izmeni</button></td>
+                <td><button class="btn btn-danger" ng-click="delete(u.id)">Ukloni</button></td>
+            </tr>
+        </table>
+    </div>
+
+</div>

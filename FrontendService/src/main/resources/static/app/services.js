@@ -1,5 +1,6 @@
 angular.module('app.services', [
 //    'app.Auth',
     'app.Registar',
-    'app.Aktivnost'
+    'app.Aktivnost',
+    'app.User'
 ]);

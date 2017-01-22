@@ -1,7 +1,6 @@
 angular.module('app.controllers', [
-//    'app.LoginCtrl',
-//    'app.RegisterCtrl',
-//    'app.LogoutCtrl',
+    'app.LoginCtrl',
+    'app.LogoutCtrl',
 	'app.HomeCtrl',
 	'app.RegistarCtrl',
 	'app.RegistarModalCtrl',
@@ -9,5 +8,7 @@ angular.module('app.controllers', [
 	'app.AktivnostiCtrl',
 	'app.AktivnostModalCtrl',
 	'app.ResultsModalCtrl',
-	'app.VerifyModalCtrl'
+	'app.VerifyModalCtrl',
+	'app.UsersCtrl',
+	'app.UserModalCtrl'
 ]);

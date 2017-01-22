@@ -1,0 +1,61 @@
+
+<div>
+	<div class="modal-header">
+		<h3 class="modal-title" id="modal-title">Korisnik:</h3>
+	</div>
+	<div class="modal-body" id="modal-body">
+		<table class="table">
+			<tr>
+				<td>Ime</td>
+				<td><input type="text" class="form-control" ng-model="ime"><td>
+			</tr>
+			<tr>
+				<td>Prezime</td>
+				<td><input type="text" class="form-control" ng-model="prezime"><td>
+			</tr>
+			<tr>
+				<td>Korisnicko ime</td>
+				<td><input type="text" class="form-control" ng-model="uusername"><td>
+				
+			</tr>
+			<tr>
+				<td>Lozinka</td>
+				<td><input type="password" class="form-control"
+					ng-model="password"><td>
+			</tr>
+			<tr>
+				<td>Ponovljena lozinka</td>
+				<td><input type="password" class="form-control"
+					ng-model="rpassword"><td>
+			</tr>
+			<tr>
+				<td>Uloga</td>
+				<td><form class="form-group">
+						<div class="radio">
+							<label for="p"> <input id="p" type="radio"
+								ng-model="uloga" value="RUK_KVALITET">
+								Predstavnik rukovodstva za kvalitet
+							</label><br />
+						</div>
+						<div class="radio">
+							<label for="k"> <input id="k" type="radio"
+								ng-model="uloga" value="RUK_TIMA">
+								Rukovodilac tima
+							</label><br />
+						</div>
+						<div class="radio">
+							<label for="q"> <input id="q" type="radio"
+								ng-model="uloga" value="RUK_OJ">
+								Rukovodilac organizacione jedinice
+							</label><br />
+						</div>
+					</form></td>
+			</tr>
+		</table>
+
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="button" ng-click="save()">OK</button>
+		<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+	</div>
+</div>

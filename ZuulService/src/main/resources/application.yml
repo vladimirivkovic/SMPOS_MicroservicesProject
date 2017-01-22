@@ -1,5 +1,8 @@
 server:
   port: 8765
+ 
+#zuul:
+#      sensitiveHeaders: Cookie,Set-Cookie,Authorization
 
 eureka:
   instance:
@@ -7,5 +10,3 @@ eureka:
   client:
     registerWithEureka: true
     fetchRegistry: true
-#    serviceUrl:
-#      defaultZone: http://discovery:8761/eureka/

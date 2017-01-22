@@ -3,16 +3,16 @@
     <div class="container">
         <div class="navbar-subject">
             <img src="/img/ftn-logo.png" class="mt-5 mr-10 pull-left" height="40" width="40"/>
-            <a class="navbar-brand" href="/">Fakultet tehničkih nauka - Novi Sad</a>
+            <a class="navbar-brand" href="#/">Fakultet tehničkih nauka - Novi Sad</a>
         </div>
 
         <ul class="nav navbar-nav navbar-left">
         
-        	<li>
+        	<li ng-if="display == 'RUK_KVALITET'">
                 <a href="#/registarMera">Registar Mera</a>
             </li>
             
-            <li>
+            <li ng-if="display == 'RUK_TIMA' || display == 'RUK_OJ' || display == 'RUK_KVALITET'">
                 <a href="#/naloziAktivnosti">Nalozi za aktivnosti</a>
             </li>
 
@@ -46,36 +46,17 @@
 <!--             </li> -->
 
             <!--Users menu-->
-            <li ng-if="">
-                <a href="/users">Users</a>
-            </li>
-
-
-            <!--Amendments-->
-            <li uib-dropdown on-toggle="toggled(open)" ng-if="display == 'representative' || display == 'president'">
-                <a href id="simple-dropdown" uib-dropdown-toggle>Amendments</a>
-                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-                    <li ng-if="display == 'representative' || display == 'president'">
-                        <a href="/amendments">Search Amendments</a>
-                    </li>
-                    <li ng-if="display == 'representative' || display == 'president'">
-                        <a href="/myAmendments">My Amendments</a>
-                    </li>
-                </ul>
-            </li>
-
-            <!--Semantic search-->
-            <li ng-if="display == 'citizen' || display == 'representative' || display == 'president'">
-                <a href="/semanticSearch">Semantic Search</a>
+            <li ng-if="display === 'ADMIN'">
+                <a href="#/users">Korisnici</a>
             </li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-            <li ng-if="display == 'citizen' || display == 'representative' || display == 'president'">
-                <a href="/logout"><span class="glyphicon glyphicon-log-out mr-5" aria-hidden="true"></span>Log out</a>
+            <li ng-if="display != 'login'">
+                <a href="#/logout"><span class="glyphicon glyphicon-log-out mr-5" aria-hidden="true"></span>Odjava</a>
             </li>
             <li ng-if="display == 'login'">
-                <a href="/login"><span class="glyphicon glyphicon-log-in mr-5" aria-hidden="true"></span>Login</a>
+                <a href="#/login"><span class="glyphicon glyphicon-log-in mr-5" aria-hidden="true"></span>Prijava</a>
             </li>
         </ul>
     </div>

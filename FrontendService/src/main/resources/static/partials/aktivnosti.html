@@ -2,7 +2,7 @@
 	<div class="mt-50">
 		<h1>Pregled preventivnih/korektivnih aktivnosti</h1>
 		<h4>Pregled svih preventivnih/korektivnih aktivnosti</h4>
-		<button class="btn btn-info" ng-click="createNew(null, false)">Dodaj
+		<button class="btn btn-info" ng-click="createNew(null, false)" ng-if="display == 'RUK_TIMA'">Dodaj
 			aktivnost</button>
 		<table class="table table-bordered table-striped table-hover"
 			ng-if="data.length">
@@ -18,8 +18,8 @@
 				<th>Ocena</th>
 				<th>Verifikacija</th>
 				<th></th>
-				<th></th>
-				<th></th>
+				<th ng-if="display == 'RUK_TIMA'"></th>
+				<th ng-if="display == 'RUK_TIMA'"></th>
 				
 			</tr>
 			<tr ng-repeat="a in data">
@@ -31,25 +31,31 @@
 				<!--                 <td>{{ a.napomena }}</td> -->
 				<td>{{ a.rukovodilacTima }}</td>
 				<td>{{ printDate(a.datumPotpisa) }}</td>
-				<td><button class="btn btn-info"
+				<td ng-if="display == 'RUK_OJ'"><button class="btn btn-info"
 						ng-click="enterResults(a, a.ocenaEfekta != null)">{{
 						a.ocenaEfekta ? 'Prikaz rezultata' : 'Unos rezultata'}}</button></td>
-				<td><button class="btn btn-info" ng-disabled = "!a.ocenaEfekta"
+				<td ng-if="display == 'RUK_TIMA' || display == 'RUK_KVALITET'"><button class="btn btn-info" ng-disabled = "!a.ocenaEfekta"
+						ng-click="enterResults(a, a.ocenaEfekta != null)">
+						Prikaz rezultata</button></td>
+				<td ng-if="display == 'RUK_TIMA'"><button class="btn btn-info" ng-disabled = "!a.ocenaEfekta"
 						ng-click="verify(a, a.obimRealizacije != null)">{{
 						a.obimRealizacije ? 'Prikaz verifikacije' : 'Verifikuj'}}</button></td>
+				<td ng-if="display == 'RUK_OJ' || display == 'RUK_KVALITET'"><button class="btn btn-info" ng-disabled = "!a.obimRealizacije"
+						ng-click="verify(a, a.obimRealizacije != null)">
+						Prikaz verifikacije</button></td>
 				<td><button class="btn btn-default"
 						ng-click="createNew(a, true)">Prikaz</button></td>
-				<td><button class="btn btn-warning"
+				<td ng-if="display == 'RUK_TIMA'"><button class="btn btn-warning"
 						ng-click="createNew(a, false)"">Izmeni</button></td>
-				<td><button class="btn btn-danger" ng-click="delete(a)">Ukloni</button></td>
+				<td ng-if="display == 'RUK_TIMA'"><button class="btn btn-danger" ng-click="delete(a)">Ukloni</button></td>
 				
 			</tr>
 		</table>
-		<div ng-if="!data.length">
-			<div class="alert alert-warning" role="alert">
-				<b>Registar je prazan!</b>
-			</div>
-		</div>
+<!-- 		<div ng-if="!data.length"> -->
+<!-- 			<div class="alert alert-warning" role="alert"> -->
+<!-- 				<b>Registar je prazan!</b> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
 	</div>
 
 </div>

@@ -7,6 +7,10 @@
 
 						$scope.save = function() {
 							var ret = $scope.validate();
+							if (!ret.brojMere) {
+								alter(ret);
+								return;
+							}
 							console.log('saving...');
 							console.log(ret)
 							$uibModalInstance.close(ret);
@@ -19,6 +23,19 @@
 
 						$scope.validate = function() {
 							var x = {}
+
+							if ($scope.brojMere)
+								return 'Broj mere nije unet!';
+							if ($scope.nosilacAktivnosti)
+								return 'Nosilac aktivnosti nije unet!';
+							if ($scope.opis)
+								return 'Opis nije unet!';
+							if ($scope.cilj)
+								return 'Cilj nije unet!';
+							if ($scope.ocekivaniEfekti)
+								return 'Ocekivani efekti nisu uneti!';
+							if ($scope.rukovodilacTima)
+								return 'Rukovodilac tima nije unet!';
 
 							x.brojMere = $scope.brojMere;
 							x.nosilacAktivnosti = $scope.nosilacAktivnosti;
