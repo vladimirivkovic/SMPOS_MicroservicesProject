@@ -7,7 +7,7 @@
             <tr>
                 <th class="text-center">Ime</th>
                 <th class="text-center">Prezime</th>
-                <th class="text-center">Korisnicko ime</th>
+                <th class="text-center">Korisničko ime</th>
                 <th class="text-center">Uloga</th>
                 <th></th>
                 <th></th>
@@ -16,7 +16,7 @@
                 <td class="text-center">{{ u.ime }}</td>
                 <td class="text-center">{{ u.prezime }}</td>
                 <td class="text-center">{{ u.username }}</td>
-                <td class="text-center">{{ u.uloga }}</td>
+                <td class="text-center">{{ printUloga(u.uloga) }}</td>
 
                 
                 <td><button class="btn btn-info" ng-click="createNew(u)">Izmeni</button></td>

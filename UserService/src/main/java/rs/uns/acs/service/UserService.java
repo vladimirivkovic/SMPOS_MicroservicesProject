@@ -1,9 +1,12 @@
 package rs.uns.acs.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import rs.uns.acs.model.User;
+import rs.uns.acs.model.User.Role;
 import rs.uns.acs.repository.UserRepository;
 
 @Service
@@ -35,6 +38,10 @@ public class UserService extends AbstractCRUDService<User, String>{
 	
 	public User findById(String userId) {
 		return userRepository.findById(userId);
+	}
+	
+	public List<User> findByUloga(Role uloga) {
+		return userRepository.findByUloga(uloga);
 	}
 
 }

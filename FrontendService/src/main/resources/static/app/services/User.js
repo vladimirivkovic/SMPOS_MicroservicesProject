@@ -79,6 +79,13 @@
                             }
                         );;
                 },
+                findByUloga: function (data) {
+                    return $http({
+                        method: 'GET',
+                        url: regUrl + 'findByUloga',
+                        params: data
+                    });
+                },
             };
     }]);
 

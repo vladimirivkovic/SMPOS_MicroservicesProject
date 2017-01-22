@@ -29,14 +29,15 @@ public class AktivnostService extends AbstractCRUDService<Aktivnost, String>{
 	
     @Override
 	public Aktivnost save(Aktivnost entity) {
-    	CommunicationService<Boolean> c = new CommunicationService<>(Boolean.class, restTemplate);
+    	CommunicationService<String> c = new CommunicationService<>(String.class, restTemplate);
     	String url = registryUrl + entity.getBrojMere();
 
-    	Boolean response = c.get(url);
+    	String response = c.get(url);
 
-    	if (response)
+    	if (response.length() > 0) {
+    		entity.setRukovodilacTima(response);
     		return super.save(entity);
-    	else
+    	} else
     		throw new IllegalArgumentException("Registry does not exist!");
 	}
     

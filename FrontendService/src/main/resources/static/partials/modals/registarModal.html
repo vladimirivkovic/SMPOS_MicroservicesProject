@@ -7,12 +7,12 @@
 		<table class="table">
 			<tr>
 				<td>Proces/proizvod/usluga</td>
-				<td><input type="text" class="form-control" ng-model="ppu">
+				<td><input type="text" class="form-control" ng-model="ppu"></td>
 			</tr>
 			<tr>
-				<td>Neusaglasenost</td>
+				<td>Neusaglašenost</td>
 				<td><input type="text" class="form-control"
-					ng-model="neusaglasnost">
+					ng-model="neusaglasnost"></td>
 			</tr>
 			<tr>
 				<td>Mera (P/K)</td>
@@ -29,10 +29,16 @@
 						</div>
 					</form></td>
 			</tr>
+<!-- 			<tr> -->
+<!-- 				<td>Rukovodilac tima</td> -->
+<!-- 				<td><input type="text" class="form-control" -->
+<!-- 					ng-model="rukovodilacTima"></td> -->
+<!-- 			</tr> -->
 			<tr>
 				<td>Rukovodilac tima</td>
-				<td><input type="text" class="form-control"
-					ng-model="rukovodilacTima">
+				<td><select ng-model="selRuk"
+					ng-options="x for x in ruks" class="form-control">
+				</select></td>
 			</tr>
 			<tr>
 				<td>Planirani rok</td>

@@ -73,6 +73,20 @@
 	                );
 				  }
 				  
+				  $scope.printUloga = function(uloga) {
+					  if (uloga == 'RUK_KVALITET') {
+						  return 'Predstavnik rukovodstva za kvalitet';
+					  } else if (uloga == 'RUK_TIMA') {
+						  return 'Rukovodilac tima';
+					  } else if (uloga == 'RUK_OJ') {
+						  return 'Rukovodilac organizacione jedinice';
+					  } else if (uloga == 'ADMIN') {
+						  return 'Administrator sistema';
+					  } else {
+						  return '';
+					  }
+				  }
+				  
         	
         }]);
 }(angular));

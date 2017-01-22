@@ -21,8 +21,13 @@ public class RegistarController extends AbstractRESTController<Registar, String>
 	}
 	
 	@RequestMapping("checkRegistry")
-	public Boolean checkRegistry(@RequestParam("redniBroj") Integer redniBroj) {
-		return registarService.findByRedniBroj(redniBroj) != null;
+	public String checkRegistry(@RequestParam("redniBroj") Integer redniBroj) {
+		Registar reg = registarService.findByRedniBroj(redniBroj);
+		
+		if (reg != null)
+			return reg.getRukovodilacTima();
+		else 
+			return "";
 	}
 
 }

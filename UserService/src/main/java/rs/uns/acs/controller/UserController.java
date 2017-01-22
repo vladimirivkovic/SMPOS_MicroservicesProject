@@ -1,5 +1,7 @@
 package rs.uns.acs.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import rs.uns.acs.model.User;
+import rs.uns.acs.model.User.Role;
 import rs.uns.acs.service.UserService;
 
 @RestController
@@ -63,6 +66,13 @@ public class UserController extends AbstractRESTController<User, String>{
 //		Page<User> all = userService.findByFirstName(firstName, new PageRequest(page, pageSize));
 //		return prepareListPage(all);
 //	}
+	
+	@RequestMapping(value = "findByUloga", method = RequestMethod.GET)
+	public List<User> findByAreaOfDanger(
+			@RequestParam(name = "uloga") Role uloga) {
+		List<User> all = userService.findByUloga(uloga);
+		return all;
+	}
 
 
 }

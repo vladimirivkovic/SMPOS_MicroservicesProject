@@ -5,6 +5,8 @@ import java.io.Serializable;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @SuppressWarnings("serial")
 @Document
 public class User implements Serializable {
@@ -48,6 +50,7 @@ public class User implements Serializable {
 		return password;
 	}
 
+	@JsonIgnore
 	public void setPassword(String password) {
 		this.password = password;
 	}

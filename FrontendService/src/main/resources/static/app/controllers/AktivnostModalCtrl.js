@@ -34,8 +34,8 @@
 								return 'Cilj nije unet!';
 							if (!$scope.ocekivaniEfekti)
 								return 'Ocekivani efekti nisu uneti!';
-							if (!$scope.rukovodilacTima)
-								return 'Rukovodilac tima nije unet!';
+//							if (!$scope.rukovodilacTima)
+//								return 'Rukovodilac tima nije unet!';
 
 							x.brojMere = $scope.brojMere;
 							x.nosilacAktivnosti = $scope.nosilacAktivnosti;
