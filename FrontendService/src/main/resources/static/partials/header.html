@@ -1,63 +1,64 @@
 <!--suppress HtmlUnknownTarget -->
 <nav class="navbar navbar-inverse">
-    <div class="container">
-        <div class="navbar-subject">
-            <img src="/img/ftn-logo.png" class="mt-5 mr-10 pull-left" height="40" width="40"/>
-            <a class="navbar-brand" href="#/">Fakultet tehničkih nauka - Novi Sad</a>
-        </div>
+	<div class="container">
+		<div class="navbar-subject">
+			<img src="/img/ftn-logo.png" class="mt-5 mr-10 pull-left" height="40"
+				width="40" /> <a class="navbar-brand" href="#/">Fakultet
+				tehničkih nauka - Novi Sad</a>
+		</div>
 
-        <ul class="nav navbar-nav navbar-left">
-        
-        	<li ng-if="display == 'RUK_KVALITET' || display == 'RUK_OJ' || display == 'RUK_TIMA'">
-                <a href="#/registarMera">Registar Mera</a>
-            </li>
-            
-            <li ng-if="display == 'RUK_TIMA' || display == 'RUK_OJ' || display == 'RUK_KVALITET'">
-                <a href="#/naloziAktivnosti">Nalozi za aktivnosti</a>
-            </li>
+		<ul class="nav navbar-nav navbar-left">
 
-<!--             Sessions -->
-<!--             <li uib-dropdown on-toggle="toggled(open)" ng-if="true"> -->
-<!--                 <a href id="simple-dropdown" uib-dropdown-toggle>Regi</a> -->
-<!--                 <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown"> -->
-<!--                     <li ng-if="display == 'representative' || display == 'president'"> -->
-<!--                         <a href="/sessions">Sessions</a> -->
-<!--                     </li> -->
-<!--                     <li ng-if="display == 'president'"> -->
-<!--                         <a href="/manageSession">Manage Session</a> -->
-<!--                     </li> -->
-<!--                 </ul> -->
-<!--             </li> -->
+			<!--         	<li ng-if="display == 'RUK_KVALITET' || display == 'RUK_OJ' || display == 'RUK_TIMA'"> -->
+			<!--                 <a href="#/registarMera">Registar Mera</a> -->
+			<!--             </li> -->
 
-<!--             Acts menu -->
-<!--             <li uib-dropdown on-toggle="toggled(open)" ng-if=""> -->
-<!--                 <a href id="simple-dropdown" uib-dropdown-toggle>Acts</a> -->
-<!--                 <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown"> -->
-<!--                     <li ng-if="display == 'citizen' || display == 'representative' || display == 'president'"> -->
-<!--                         <a href="/acts">Search Acts</a> -->
-<!--                     </li> -->
-<!--                     <li ng-if="display == 'representative' || display == 'president'"> -->
-<!--                         <a href="/myActs">My Acts</a> -->
-<!--                     </li> -->
-<!--                     <li ng-if="(display == 'representative' || display == 'president') && currentStatus == 'act'" > -->
-<!--                         <a href="/newAct" ng-class="{'non-active' : (currentStatus != 'act')}">Propose an act</a> -->
-<!--                     </li> -->
-<!--                 </ul> -->
-<!--             </li> -->
+			<li uib-dropdown on-toggle="toggled(open)"
+				ng-if="display == 'RUK_TIMA' || display == 'RUK_OJ' || display == 'RUK_KVALITET'">
+				<a href id="simple-dropdown" uib-dropdown-toggle>Registrovanje
+					mera</a>
+				<ul class="dropdown-menu" uib-dropdown-menu
+					aria-labelledby="simple-dropdown">
+					<li><a href="#/registri">Registri mera</a></li>
+					<li><a href="#/registarMera">Evidencija mera</a></li>
+				</ul>
+			</li>
 
-            <!--Users menu-->
-            <li ng-if="display === 'ADMIN'">
-                <a href="#/users">Korisnici</a>
-            </li>
-        </ul>
+			<li
+				ng-if="display == 'RUK_TIMA' || display == 'RUK_OJ' || display == 'RUK_KVALITET'">
+				<a href="#/naloziAktivnosti">Nalozi za aktivnosti</a>
+			</li>
 
-        <ul class="nav navbar-nav navbar-right">
-            <li ng-if="display != 'login'">
-                <a href="#/logout"><span class="glyphicon glyphicon-log-out mr-5" aria-hidden="true"></span>Odjava</a>
-            </li>
-            <li ng-if="display == 'login'">
-                <a href="#/login"><span class="glyphicon glyphicon-log-in mr-5" aria-hidden="true"></span>Prijava</a>
-            </li>
-        </ul>
-    </div>
+
+
+			<!--             Acts menu -->
+			<!--             <li uib-dropdown on-toggle="toggled(open)" ng-if=""> -->
+			<!--                 <a href id="simple-dropdown" uib-dropdown-toggle>Acts</a> -->
+			<!--                 <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown"> -->
+			<!--                     <li ng-if="display == 'citizen' || display == 'representative' || display == 'president'"> -->
+			<!--                         <a href="/acts">Search Acts</a> -->
+			<!--                     </li> -->
+			<!--                     <li ng-if="display == 'representative' || display == 'president'"> -->
+			<!--                         <a href="/myActs">My Acts</a> -->
+			<!--                     </li> -->
+			<!--                     <li ng-if="(display == 'representative' || display == 'president') && currentStatus == 'act'" > -->
+			<!--                         <a href="/newAct" ng-class="{'non-active' : (currentStatus != 'act')}">Propose an act</a> -->
+			<!--                     </li> -->
+			<!--                 </ul> -->
+			<!--             </li> -->
+
+			<!--Users menu-->
+			<li ng-if="display === 'ADMIN'"><a href="#/users">Korisnici</a>
+			</li>
+		</ul>
+
+		<ul class="nav navbar-nav navbar-right">
+			<li ng-if="display != 'login'"><a href="#/logout"><span
+					class="glyphicon glyphicon-log-out mr-5" aria-hidden="true"></span>Odjava</a>
+			</li>
+			<li ng-if="display == 'login'"><a href="#/login"><span
+					class="glyphicon glyphicon-log-in mr-5" aria-hidden="true"></span>Prijava</a>
+			</li>
+		</ul>
+	</div>
 </nav>

@@ -1,0 +1,28 @@
+<div class="pl-50 pr-50 pb-50 pt-5">
+	<div class="mt-50">
+		<h1>Pregled registara preventivnih/korektivnih mera</h1>
+		<button class="btn btn-info" ng-click="createNew(null)" ng-if="display == 'RUK_KVALITET'">Dodaj
+			registar</button>
+		<table class="table table-bordered table-striped table-hover"
+			ng-if="data.length">
+			<tr>
+				<th class="text-center">Redni broj</th>
+				<th class="text-center">Datum otvaranja</th>
+
+			</tr>
+			<tr ng-repeat="r in data">
+				<td class="text-center">{{ r.broj }}</td>
+				<td class="text-center">{{ printDate(r.datumOtvaranja) }}</td>
+				
+<!-- 				<td ng-if="display == 'RUK_KVALITET'"><button -->
+<!-- 						class="btn btn-info" ng-click="createNew(r)">Izmeni</button></td> -->
+<!-- 				<td ng-if="display == RUK_KVALITET"><button -->
+<!-- 						class="btn btn-danger" ng-click="delete(r.id)">Ukloni</button></td> -->
+			</tr>
+		</table>
+		<!--         <div ng-if="!data.length"> -->
+		<!--             <div class="alert alert-warning" role="alert"><b>Registar je prazan!</b></div> -->
+		<!--         </div> -->
+	</div>
+
+</div>

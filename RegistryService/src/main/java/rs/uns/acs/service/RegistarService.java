@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import rs.uns.acs.model.Registar;
+import rs.uns.acs.model.Registry;
 import rs.uns.acs.repository.RegistarRepository;
 
 @Service
@@ -17,6 +18,9 @@ public class RegistarService extends AbstractCRUDService<Registar, String> {
 	private static final String activityUrl = "http://localhost:8765/activity/api/checkActivities?brojMere=";
 
 	@Autowired
+	private RegistryService registryService;
+	
+	@Autowired
 	public RegistarService(RegistarRepository repo) {
 		super(repo);
 		this.registarRepository = repo;
@@ -25,8 +29,11 @@ public class RegistarService extends AbstractCRUDService<Registar, String> {
 
 	@Override
 	public Registar save(Registar entity) {
+		Registry reg = registryService.findActive();
+		entity.setBrojRegistra(reg.getBroj());
+		
 		if (entity.getId() == null) {
-			List<Registar> allBrojMere = registarRepository.findAll();
+			List<Registar> allBrojMere = registarRepository.findByBrojRegistra(reg.getBroj());
 			int max = -1;
 
 			for (Registar i : allBrojMere) {

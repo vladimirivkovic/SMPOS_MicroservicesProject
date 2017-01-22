@@ -7,6 +7,7 @@
 		<table class="table table-bordered table-striped table-hover"
 			ng-if="data.length">
 			<tr>
+				<th class="text-center">Broj registra</th>
 				<th class="text-center">Redni broj</th>
 				<th class="text-center">Proces/proizvod/usluga</th>
 				<th class="text-center">Neusaglašenost</th>
@@ -21,6 +22,7 @@
 				<th ng-if="display == RUK_KVALITET"></th>
 			</tr>
 			<tr ng-repeat="r in data">
+				<td class="text-center">{{ r.brojRegistra }}</td>
 				<td class="text-center">{{ r.redniBroj }}</td>
 				<td class="text-center">{{ r.ppu }}</td>
 				<td class="text-center">{{ r.neusaglasnost }}</td>

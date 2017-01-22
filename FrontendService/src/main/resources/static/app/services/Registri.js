@@ -1,10 +1,10 @@
 (function (angular) {
     'use strict';
     
-    var regUrl = 'http://localhost:8765/registry/api/mere'
+    var regUrl = 'http://localhost:8765/registry/api/registar/'
     
-    angular.module('app.Registar', [])
-        .factory('Registar', ['$http', function ($http) {
+    angular.module('app.Registri', [])
+        .factory('Registri', ['$http', function ($http) {
             return {
                 getById: function (id) {
                     return $http({

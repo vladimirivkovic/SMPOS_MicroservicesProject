@@ -10,5 +10,7 @@ angular.module('app.controllers', [
 	'app.ResultsModalCtrl',
 	'app.VerifyModalCtrl',
 	'app.UsersCtrl',
-	'app.UserModalCtrl'
+	'app.UserModalCtrl',
+	'app.RegistriCtrl',
+	'app.RegistriModalCtrl'
 ]);

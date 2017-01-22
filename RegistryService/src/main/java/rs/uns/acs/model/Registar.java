@@ -20,6 +20,7 @@ public class Registar implements Serializable {
 	private Date planiranRok;
 	private Date produzenRok;
 	private Date ostvarenRok;
+	private int brojRegistra;
 	
 	public Registar() {
 		// TODO Auto-generated constructor stub
@@ -101,17 +102,27 @@ public class Registar implements Serializable {
 		this.ostvarenRok = ostvarenRok;
 	}
 
+	public int getBrojRegistra() {
+		return brojRegistra;
+	}
+
+	public void setBrojRegistra(int brojRegistra) {
+		this.brojRegistra = brojRegistra;
+	}
+
 	@Override
 	public String toString() {
 		return "Registar [id=" + id + ", redniBroj=" + redniBroj + ", ppu=" + ppu + ", neusaglasnost=" + neusaglasnost
 				+ ", mera=" + mera + ", rukovodilacTima=" + rukovodilacTima + ", planiranRok=" + planiranRok
-				+ ", produzenRok=" + produzenRok + ", ostvarenRok=" + ostvarenRok + "]";
+				+ ", produzenRok=" + produzenRok + ", ostvarenRok=" + ostvarenRok + ", brojRegistra=" + brojRegistra
+				+ "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + brojRegistra;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + mera;
 		result = prime * result + ((neusaglasnost == null) ? 0 : neusaglasnost.hashCode());
@@ -133,6 +144,8 @@ public class Registar implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Registar other = (Registar) obj;
+		if (brojRegistra != other.brojRegistra)
+			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -174,7 +187,7 @@ public class Registar implements Serializable {
 			return false;
 		return true;
 	}
-	
+
 	
 
 }

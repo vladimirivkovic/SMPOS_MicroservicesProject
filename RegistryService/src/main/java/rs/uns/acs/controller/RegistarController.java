@@ -9,7 +9,7 @@ import rs.uns.acs.model.Registar;
 import rs.uns.acs.service.RegistarService;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("api/mere")
 public class RegistarController extends AbstractRESTController<Registar, String>{
 	
 	private RegistarService registarService;

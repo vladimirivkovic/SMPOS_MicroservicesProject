@@ -11,6 +11,10 @@
                     templateUrl: 'partials/registar.html',
                     controller: 'RegistarCtrl'
                 })
+                .when('/registri', {
+                    templateUrl: 'partials/registri.html',
+                    controller: 'RegistriCtrl'
+                })
                 .when('/naloziAktivnosti', {
                     templateUrl: 'partials/aktivnosti.html',
                     controller: 'AktivnostiCtrl'
