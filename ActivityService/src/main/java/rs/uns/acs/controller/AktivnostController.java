@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,9 +23,15 @@ public class AktivnostController extends AbstractRESTController<Aktivnost, Strin
 		this.aktivnostService = service;
 	}
 	
-	@RequestMapping(value = "findByBrMere")
-	public List<Aktivnost> getAllFor(@RequestParam("brojMere") int brojMere) {
+	@RequestMapping(value = "findByBrMere", method = RequestMethod.GET)
+	public List<Aktivnost> getAllFor(@RequestParam("brojMere") Integer brojMere) {
 		
 		return aktivnostService.getAllFor(brojMere);
+	}
+	
+	@RequestMapping(value = "checkActivities", method = RequestMethod.GET)
+	public Boolean checkAcitivies(@RequestParam("brojMere") Integer brojMere) {
+		
+		return aktivnostService.checkActivitiesForClosing(brojMere);
 	}
 }

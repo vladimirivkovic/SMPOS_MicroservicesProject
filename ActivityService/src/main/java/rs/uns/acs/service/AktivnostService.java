@@ -39,5 +39,19 @@ public class AktivnostService extends AbstractCRUDService<Aktivnost, String>{
     	else
     		throw new IllegalArgumentException("Registry does not exist!");
 	}
+    
+    public Boolean checkActivitiesForClosing(int brojMere) {
+    	List<Aktivnost> a = aktivnostRepository.findByBrojMere(brojMere);
+    	
+    	for (Aktivnost i : a) {
+    		if (!(i.getObimRealizacije() != null 
+    				&& i.getVerifikacijaEfekta() != null 
+    				&& i.getDatumVerifikacije() != null)) {
+    			return false;
+    		}
+    	}
+    	
+    	return true;
+    }
 
 }

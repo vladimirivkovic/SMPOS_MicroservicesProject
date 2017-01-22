@@ -98,6 +98,8 @@
 		                    	$scope.init();
 		                    },
 		                    function (error) {
+		                    	$scope.init();
+		                    	alert(error.data.message);
 		                        console.log(error);
 		                    }
 		                );
@@ -108,6 +110,8 @@
 		                    	$scope.init();
 		                    },
 		                    function (error) {
+		                    	$scope.init();
+		                    	alert(error.data.message);
 		                        console.log(error);
 		                    }
 		                );

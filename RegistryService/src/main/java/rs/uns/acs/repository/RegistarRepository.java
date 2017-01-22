@@ -8,5 +8,6 @@ public interface RegistarRepository extends MongoRepository<Registar, String> {
 
 	//public List<Integer> findAllRedniBroj();
 	public Registar findByRedniBroj(int redniBroj);
+	public Registar findById(String id);
 
 }
