@@ -69,7 +69,7 @@ public abstract class AbstractRESTController<T, ID extends Serializable> {
 	@RequestMapping(method = RequestMethod.POST, consumes = { MediaType.APPLICATION_JSON_VALUE })
 	public Map<String, Object> save(@RequestBody T newEntity) {
 		logger.debug("create() - {} - {}", newEntity, newEntity.getClass());
-		
+
 		T created = service.save(newEntity);
 		Map<String, Object> m = new HashMap<String, Object>();
 		m.put("success", true);

@@ -1,42 +1,50 @@
 <div class="pl-50 pr-50 pb-50 pt-5">
-    <div class="mt-50">
-        <h1>Registar preventivnih/korektivnih mera</h1>
-        <h4>Pregled svih preventivnih/korektivnih mera koje su odobrene</h4>
-        <button class="btn btn-info" ng-click="createNew(null)">Dodaj meru</button>
-        <table class="table table-bordered table-striped table-hover" ng-if="data.length">
-            <tr>
-                <th class="text-center">Redni broj</th>
-                <th class="text-center">Proces/proizvod/usluga</th>
-                <th class="text-center">Neusaglasenost</th>
-                <th class="text-center">Mera (P/K)</th>
-                <th class="text-center">Rukovodilac tima</th>
-                <th class="text-center">Planiran</th>
-                <th class="text-center">Produzen</th>
-                <th class="text-center">Ostvaren</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr ng-repeat="r in data">
-                <td class="text-center">{{ r.redniBroj }}</td>
-                <td class="text-center">{{ r.ppu }}</td>
-                <td class="text-center">{{ r.neusaglasnost }}</td>
-                <td class="text-center">{{ r.mera }}</td>
-                <td class="text-center">{{ r.rukovodilacTima }}</td>
-                <td class="text-center">{{ printDate(r.planiranRok) }}</td>
-                <td class="text-center">{{ printDate(r.produzenRok) }}</td>
-                <td class="text-center">{{ printDate(r.ostvarenRok) }}</td>
-                
-                <td><button class="btn btn-info" ng-click="createNew(r)">Izmeni</button></td>
-                <td><button class="btn btn-danger" ng-click="delete(r.id)">Ukloni</button></td>
-                <td><button class="btn btn-warning" ng-click="postpone(r)" ng-disabled="r.ostvarenRok">Produzi</button></td>
-                <td><button class="btn btn-success" ng-click="close(r)" ng-disabled="r.ostvarenRok">Zakljuci</button></td>
-            </tr>
-        </table>
-<!--         <div ng-if="!data.length"> -->
-<!--             <div class="alert alert-warning" role="alert"><b>Registar je prazan!</b></div> -->
-<!--         </div> -->
-    </div>
+	<div class="mt-50">
+		<h1>Registar preventivnih/korektivnih mera</h1>
+		<h4>Pregled svih preventivnih/korektivnih mera koje su odobrene</h4>
+		<button class="btn btn-info" ng-click="createNew(null)" ng-if="display == RUK_KVALITET">Dodaj
+			meru</button>
+		<table class="table table-bordered table-striped table-hover"
+			ng-if="data.length">
+			<tr>
+				<th class="text-center">Redni broj</th>
+				<th class="text-center">Proces/proizvod/usluga</th>
+				<th class="text-center">Neusaglasenost</th>
+				<th class="text-center">Mera (P/K)</th>
+				<th class="text-center">Rukovodilac tima</th>
+				<th class="text-center">Planiran</th>
+				<th class="text-center">Produzen</th>
+				<th class="text-center">Ostvaren</th>
+				<th ng-if="display == RUK_KVALITET"></th>
+				<th ng-if="display == RUK_KVALITET"></th>
+				<th ng-if="display == RUK_KVALITET"></th>
+				<th ng-if="display == RUK_KVALITET"></th>
+			</tr>
+			<tr ng-repeat="r in data">
+				<td class="text-center">{{ r.redniBroj }}</td>
+				<td class="text-center">{{ r.ppu }}</td>
+				<td class="text-center">{{ r.neusaglasnost }}</td>
+				<td class="text-center">{{ r.mera }}</td>
+				<td class="text-center">{{ r.rukovodilacTima }}</td>
+				<td class="text-center">{{ printDate(r.planiranRok) }}</td>
+				<td class="text-center">{{ printDate(r.produzenRok) }}</td>
+				<td class="text-center">{{ printDate(r.ostvarenRok) }}</td>
+
+				<td ng-if="display == RUK_KVALITET"><button
+						class="btn btn-info" ng-click="createNew(r)">Izmeni</button></td>
+				<td ng-if="display == RUK_KVALITET"><button
+						class="btn btn-danger" ng-click="delete(r.id)">Ukloni</button></td>
+				<td ng-if="display == RUK_KVALITET"><button
+						class="btn btn-warning" ng-click="postpone(r)"
+						ng-disabled="r.ostvarenRok">Produzi</button></td>
+				<td ng-if="display == RUK_KVALITET"><button
+						class="btn btn-success" ng-click="close(r)"
+						ng-disabled="r.ostvarenRok">Zakljuci</button></td>
+			</tr>
+		</table>
+		<!--         <div ng-if="!data.length"> -->
+		<!--             <div class="alert alert-warning" role="alert"><b>Registar je prazan!</b></div> -->
+		<!--         </div> -->
+	</div>
 
 </div>

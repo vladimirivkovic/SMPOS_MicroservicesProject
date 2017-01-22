@@ -100,6 +100,7 @@
 		                    	$scope.init();
 		                    },
 		                    function (error) {
+		                    	alert(error.data.message);
 		                        console.log(error);
 		                    }
 		                );
@@ -110,6 +111,7 @@
 		                    	$scope.init();
 		                    },
 		                    function (error) {
+		                    	alert(error.data.message);
 		                        console.log(error);
 		                    }
 		                );

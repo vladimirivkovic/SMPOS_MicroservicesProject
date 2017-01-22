@@ -1,7 +1,6 @@
 package rs.uns.acs.controller;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,11 +27,4 @@ public class AktivnostController extends AbstractRESTController<Aktivnost, Strin
 		
 		return aktivnostService.getAllFor(brojMere);
 	}
-	
-	@Override
-	public Map<String, Object> save(Aktivnost newEntity) {
-		// TODO Auto-generated method stub
-		return super.save(newEntity);
-	}
-
 }

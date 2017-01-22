@@ -8,7 +8,7 @@
 						$scope.save = function() {
 							var ret = $scope.validate();
 							if (!ret.brojMere) {
-								alter(ret);
+								alert(ret);
 								return;
 							}
 							console.log('saving...');
@@ -24,17 +24,17 @@
 						$scope.validate = function() {
 							var x = {}
 
-							if ($scope.brojMere)
+							if (!$scope.brojMere)
 								return 'Broj mere nije unet!';
-							if ($scope.nosilacAktivnosti)
+							if (!$scope.nosilacAktivnosti)
 								return 'Nosilac aktivnosti nije unet!';
-							if ($scope.opis)
+							if (!$scope.opis)
 								return 'Opis nije unet!';
-							if ($scope.cilj)
+							if (!$scope.cilj)
 								return 'Cilj nije unet!';
-							if ($scope.ocekivaniEfekti)
+							if (!$scope.ocekivaniEfekti)
 								return 'Ocekivani efekti nisu uneti!';
-							if ($scope.rukovodilacTima)
+							if (!$scope.rukovodilacTima)
 								return 'Rukovodilac tima nije unet!';
 
 							x.brojMere = $scope.brojMere;

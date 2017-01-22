@@ -33,5 +33,9 @@ public class RegistarService extends AbstractCRUDService<Registar, String> {
 		
 		return super.save(entity);
 	}
+	
+	public Registar findByRedniBroj(int redniBroj) {
+		return registarRepository.findByRedniBroj(redniBroj);
+	}
 
 }

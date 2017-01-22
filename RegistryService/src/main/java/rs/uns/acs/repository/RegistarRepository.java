@@ -7,5 +7,6 @@ import rs.uns.acs.model.Registar;
 public interface RegistarRepository extends MongoRepository<Registar, String> {
 
 	//public List<Integer> findAllRedniBroj();
+	public Registar findByRedniBroj(int redniBroj);
 
 }
