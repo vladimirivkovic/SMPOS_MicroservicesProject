@@ -29,5 +29,10 @@ public class RegistarController extends AbstractRESTController<Registar, String>
 		else 
 			return "";
 	}
+	
+	@RequestMapping("checkClosedRegistry")
+	public Boolean checkClosedRegistry(@RequestParam("ppu") String ppu) {
+		return registarService.checkClosedRegistry(ppu);
+	}
 
 }

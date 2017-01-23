@@ -69,4 +69,16 @@ public class RegistarService extends AbstractCRUDService<Registar, String> {
 		return registarRepository.findByRedniBroj(redniBroj);
 	}
 
+	public Boolean checkClosedRegistry(String ppu) {
+		List<Registar> all = registarRepository.findByPpu(ppu);
+		
+		for (Registar r : all) {
+			if (r.getOstvarenRok() == null) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
+
 }

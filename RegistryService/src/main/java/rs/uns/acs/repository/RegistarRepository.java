@@ -12,5 +12,6 @@ public interface RegistarRepository extends MongoRepository<Registar, String> {
 	public Registar findByRedniBroj(int redniBroj);
 	public Registar findById(String id);
 	public List<Registar> findByBrojRegistra(int brojRegistra);
+	public List<Registar> findByPpu(String ppu);
 
 }
