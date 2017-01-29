@@ -15,7 +15,7 @@ public class RegistarService extends AbstractCRUDService<Registar, String> {
 
 	private RegistarRepository registarRepository;
 	private RestTemplate restTemplate;
-	private static final String activityUrl = "http://localhost:8765/activity/api/checkActivities?brojMere=";
+	private static final String activityUrl = "http://localhost:8765/activity/api/mere/checkActivities?brojMere=";
 
 	@Autowired
 	private RegistryService registryService;
@@ -34,7 +34,7 @@ public class RegistarService extends AbstractCRUDService<Registar, String> {
 		
 		if (entity.getId() == null) {
 			List<Registar> allBrojMere = registarRepository.findByBrojRegistra(reg.getBroj());
-			int max = -1;
+			int max = 0;
 
 			for (Registar i : allBrojMere) {
 				if (max < i.getRedniBroj()) {

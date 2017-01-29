@@ -22,7 +22,7 @@ public class RegistryService extends AbstractCRUDService<Registry, String> {
 	public Registry save(Registry entity) {
 		if (entity.getId() == null) {
 			List<Registry> allBroj = registryRepository.findAll();
-			int max = -1;
+			int max = 0;
 
 			for (Registry i : allBroj) {
 				if (max < i.getBroj()) {
